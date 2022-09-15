@@ -1,10 +1,22 @@
 #include <iostream>
-namespace Hazel {
-	__declspec(dllimport) void Print();
-}
+#include <Hazel.h>
 
-int main() {
-	Hazel::Print();
-	std::cin.get();
-	return 0;
+class Sandbox : public Hazel::Application
+{
+public:
+	Sandbox()
+	{
+
+	}
+
+	~Sandbox()
+	{
+
+	}
+};
+
+
+Hazel::Application* Hazel::CreateApplication()
+{
+	return new Sandbox();
 }
